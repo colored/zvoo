@@ -6,10 +6,11 @@ from track import Track
 
 
 def play(track):
-    track.plays += 1
-    time.sleep(3)
+    track.plays = 2
+    time.sleep(1)
     print track.path
     print track.plays
+    print track.available
 
 
 def getTrackList():
@@ -27,11 +28,8 @@ def main():
     tracklist = getTrackList()
     while (tracklist):
         current_track = random.choice(tracklist)
-        if (current_track.plays == 3):
-            tracklist.remove(current_track)
-            print str(current_track) + " REMOVED ! ! !"
-            continue
-        play(current_track)
+        if current_track.available:
+            play(current_track)
 
 
 main()
