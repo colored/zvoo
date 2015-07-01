@@ -1,10 +1,10 @@
 __author__ = 'azubko'
 
 
-class Track:
+class Track(object):
     def __init__(self, path):
         self._path = path
-        self.__plays = 5
+        self._plays = 0
         self.available = True
 
     def __str__(self):
@@ -16,12 +16,12 @@ class Track:
 
     @property
     def plays(self):
-        return "HUI"  # self.__plays
+        return self._plays
 
     @plays.setter
     def plays(self, value):
-        if self.__plays < 1:
-            self.__plays += 1
+        if self._plays < 1:
+            self._plays = value
         else:
             self.available = False
 
