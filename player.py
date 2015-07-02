@@ -11,11 +11,12 @@ def play(track):
     print track.path
     print track.plays
     print track.available
+    os.system("omxplayer -o local " + "\"" + track.path + "\"")
     track.plays += 1
 
 
 def getTrackList():
-    rootdir = r"C:\Users\azubko\Music"
+    rootdir = r"/home"
     tracks = []
 
     tracks = get_track_list("tracklist.p")
