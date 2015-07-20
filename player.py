@@ -4,19 +4,20 @@ import random
 import pickle
 
 from track import Track
+from logger import Logger
 
 
 def play(track):
     time.sleep(1)
     print track.path
-    print track.plays
-    print track.available
+    logger = Logger("test_log.txt")
+    logger.info(track.path)
     os.system("omxplayer -o local " + "\"" + track.path + "\"")
-    track.plays += 1
+    track.plays -= 1
 
 
 def getTrackList():
-    rootdir = r"/home"
+    rootdir = r"/home"  # r"C:\Users\azubko\Music"
     tracks = []
 
     tracks = get_track_list("tracklist.p")

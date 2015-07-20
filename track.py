@@ -4,7 +4,7 @@ __author__ = 'azubko'
 class Track(object):
     def __init__(self, path):
         self._path = path
-        self._plays = 0
+        self._plays = 3
         self.available = True
 
     def __str__(self):
@@ -20,7 +20,7 @@ class Track(object):
 
     @plays.setter
     def plays(self, value):
-        if self._plays < 1:
+        if self._plays > 0:
             self._plays = value
         else:
             self.available = False
