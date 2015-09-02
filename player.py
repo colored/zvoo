@@ -18,14 +18,13 @@ def play(track):
 
 def getTrackList():
     rootdir = r"/home"  # r"C:\Users\azubko\Music"
-    tracks = []
 
     tracks = get_track_list("tracklist.p")
 
     if len(tracks) == 0:
         for root, subdirs, files in os.walk(rootdir):
             for file in files:
-                if file.endswith(".mp3"):
+                if file.endswith(".mp3") or file.endswith(".flac"):
                     tracks.append(Track(os.path.join(root, file)))
     return tracks
 
