@@ -32,7 +32,6 @@ def getTrackList():
 def getTrash():
     return get_track_list("trash.p")
 
-
 def get_track_list(filename):
     tracks = []
     try:
