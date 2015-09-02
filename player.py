@@ -41,7 +41,6 @@ def get_track_list(filename):
         pass
     return tracks
 
-
 def main():
     tracklist = getTrackList()
     trash = getTrash()
